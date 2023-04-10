@@ -2621,6 +2621,10 @@ label::before
     max-width: 310px;
   }
 
+  .max-\[375px\]\:max-w-\[345px\] {
+    max-width: 345px;
+  }
+
   .max-\[375px\]\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
