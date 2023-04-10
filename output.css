@@ -1806,6 +1806,10 @@ video {
           box-decoration-break: clone;
 }
 
+.bg-cover {
+  background-size: cover;
+}
+
 .bg-contain {
   background-size: contain;
 }
@@ -2609,33 +2613,12 @@ label::before
 }
 
 @media (max-width: 375px) {
-  .max-\[375px\]\:h-2\/4 {
-    height: 50%;
-  }
-
-  .max-\[375px\]\:h-1\/5 {
-    height: 20%;
-  }
-
   .max-\[375px\]\:h-3\/5 {
     height: 60%;
   }
 
-  .max-\[375px\]\:max-w-\[300px\] {
-    max-width: 300px;
-  }
-
-  .max-\[375px\]\:max-w-\[320px\] {
-    max-width: 320px;
-  }
-
   .max-\[375px\]\:max-w-\[310px\] {
     max-width: 310px;
-  }
-
-  .max-\[375px\]\:py-2 {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
   }
 
   .max-\[375px\]\:px-12 {
@@ -2645,11 +2628,6 @@ label::before
 
   .max-\[375px\]\:pt-7 {
     padding-top: 1.75rem;
-  }
-
-  .max-\[375px\]\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 
   .max-\[375px\]\:text-3xl {
