@@ -37,15 +37,15 @@
       class="h-[35vh] w-screen  bg-[url('./images/bg-mobile-light.jpg')] dark:bg-[url('./images/bg-mobile-dark.jpg')] md:dark:bg-[url('./images/bg-desktop-dark.jpg')]  md:bg-[url('./images/bg-desktop-light.jpg')] bg-no-repeat bg-contain md:bg-cover"
     ></div>
     <div
-      class="container max-[768px]:max-w-[360px] flex justify-center items-center m-auto h-screen absolute top-0 right-0 left-0 w-screen"
+      class="container max-[375px]:max-w-[310px] max-[768px]:max-w-[360px] flex justify-center items-center m-auto h-screen absolute top-0 right-0 left-0 w-screen"
     >
       <div id="main-box" class="w-[40rem] h-[40rem]">
-        <div id="head" class="flex items-center justify-between">
-          <h2 class="text-white text-4xl font-bold tracking-[1rem]">TODO</h2>
+        <div id="head" class="flex items-center justify-between max-[375px]:pt-7">
+          <h2 class="text-white max-[375px]:text-3xl text-4xl font-bold tracking-[1rem]">TODO</h2>
           <img src="./images/icon-moon.svg" alt="" id="moon" class="dark:hidden cursor-pointer"/>
           <img src="./images/icon-sun.svg" alt="" id="sun" class="hidden dark:block cursor-pointer">
         </div>
-        <form class="w-full bg-white shadow-xl dark:bg-[#25273C] rounded-md py-5 px-16 mt-6">
+        <form class="w-full bg-white shadow-xl dark:bg-[#25273C] rounded-md max-[375px]:px-12 py-5 px-16 mt-6">
           <div id="" class="relative">
             <input type="checkbox" name="" id="form" />
             <label for="form"></label>
@@ -61,7 +61,7 @@
         </form>
         <div
           id="tasks"
-          class="h-3/4  mt-6 rounded-md bg-white dark:bg-[#25273C] dark:text-white shadow-2xl text-lg overflow-x-auto"
+          class="h-3/4 max-[375px]:h-3/5 mt-6 rounded-md bg-white dark:bg-[#25273C] dark:text-white shadow-2xl text-lg overflow-x-auto"
         >
 
         </div>

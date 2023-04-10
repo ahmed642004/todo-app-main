@@ -57,3 +57,8 @@ label::before
 .primary{
    background-color: hsl(235, 24%, 19%);
 }
+@media(max-width:375px){
+  .container{
+    max-width: 320px;
+  }
+}
