@@ -40,9 +40,9 @@ taskss.addEventListener("click", (e) => {
   if (e.target.tagName === "INPUT") {
     updateStatus(e.target.id);
     e.target.parentElement.classList.toggle("done");
-  } else if (e.target.tagName === "IMG") {
-    e.target.parentElement.remove();
-    deletedata(e.target.id);
+  }else if(e.target.tagName === "IMG"){
+    e.target.parentElement.remove()
+    deletedata(e.target.id)
   }
 });
 function addToPage(arr) {
@@ -55,13 +55,14 @@ function addToPage(arr) {
     input.type = "checkbox";
     input.id = task.id;
     input.className = "rounded-full";
-    if (task.completed == true) {
-      div.className = "task done";
-      input.checked = true;
-    }
     let label = document.createElement("label");
     let image = document.createElement("img");
     let wrapper = document.createElement("div");
+    wrapper.className = "wrapper"
+    if (task.completed == true) {
+      wrapper.className = "wrapper done";
+      input.checked = true;
+    }
     div.style.display = "flex";
     div.style.justifyContent = "space-between";
     div.style.alignItems = "center";

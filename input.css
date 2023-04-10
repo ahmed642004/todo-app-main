@@ -39,7 +39,7 @@ label::before
   height: 25px;
   border-radius: 50%;
 }
-.task.done{
+.wrapper.done{
     color: hsl(234, 39%, 85%);
     text-decoration: line-through;
     text-decoration-thickness: 2px;
