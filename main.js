@@ -15,7 +15,7 @@ if (localStorage.getItem("tasks")) {
   taskArray = JSON.parse(localStorage.getItem("tasks"));
 }
 localData();
-theme()
+theme();
 function getValue(textFrom, check) {
   checkBox.addEventListener("click", function () {
     if (check.checked) {
@@ -40,12 +40,15 @@ taskss.addEventListener("click", (e) => {
   if (e.target.tagName === "INPUT") {
     updateStatus(e.target.id);
     e.target.parentElement.classList.toggle("done");
+  } else if (e.target.tagName === "IMG") {
+    e.target.parentElement.remove();
+    deletedata(e.target.id);
   }
 });
 function addToPage(arr) {
   arr.forEach((task) => {
     text = task.text;
-    let div = document.createElement("div");
+    const div = document.createElement("div");
     div.className = "task";
     div.id = "task";
     let input = document.createElement("input");
@@ -57,10 +60,23 @@ function addToPage(arr) {
       input.checked = true;
     }
     let label = document.createElement("label");
+    let image = document.createElement("img");
+    let wrapper = document.createElement("div");
+    div.style.display = "flex";
+    div.style.justifyContent = "space-between";
+    div.style.alignItems = "center";
+    div.id = "task";
     label.setAttribute("for", task.id);
     label.innerHTML = text;
-    div.appendChild(input);
-    div.appendChild(label);
+    wrapper.appendChild(input);
+    wrapper.appendChild(label);
+    div.appendChild(wrapper);
+    image.setAttribute("src", "./images/icon-cross.svg");
+    image.id = task.id;
+    image.style.opacity = "0";
+    image.style.transition = "0.3s";
+    image.style.cursor = "pointer";
+    div.appendChild(image);
     taskss.appendChild(div);
     items.innerHTML = `${taskArray.length} items`;
   });
@@ -120,21 +136,35 @@ list.addEventListener("click", (e) => {
     }
   }
 });
-function theme(){
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
+function theme() {
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
   } else {
-    document.documentElement.classList.remove('dark')
+    document.documentElement.classList.remove("dark");
   }
   moon.addEventListener("click", () => {
-    localStorage.theme === 'dark'
-    localStorage.setItem("theme","dark")
-    document.documentElement.classList.add('dark')
+    localStorage.theme === "dark";
+    localStorage.setItem("theme", "dark");
+    document.documentElement.classList.add("dark");
   });
   sun.addEventListener("click", () => {
-    localStorage.theme === 'light'
-    document.documentElement.classList.remove('dark')
-    localStorage.setItem("theme","light")
+    localStorage.theme === "light";
+    document.documentElement.classList.remove("dark");
+    localStorage.setItem("theme", "light");
   });
 }
+// window.onload = function style(task){
+//   let opacity = 0
+//   task.style.opacity = "0"
+//   setInterval(() => {
 
+//   }, );
+// }
+function deletedata(taskId) {
+  taskArray = taskArray.filter((item) => item.id != taskId);
+  localStorage.setItem("tasks", JSON.stringify(taskArray));
+}

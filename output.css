@@ -1806,10 +1806,6 @@ video {
           box-decoration-break: clone;
 }
 
-.bg-cover {
-  background-size: cover;
-}
-
 .bg-contain {
   background-size: contain;
 }
@@ -2484,6 +2480,10 @@ label::before
   text-decoration-line:line-through
 }
 
+.task:hover img{
+  opacity: 1 !important;
+}
+
 .nothing{
   position: absolute;
   top: 50%;
@@ -2615,10 +2615,6 @@ label::before
 @media (max-width: 375px) {
   .max-\[375px\]\:h-3\/5 {
     height: 60%;
-  }
-
-  .max-\[375px\]\:max-w-\[310px\] {
-    max-width: 310px;
   }
 
   .max-\[375px\]\:max-w-\[345px\] {

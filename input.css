@@ -45,6 +45,9 @@ label::before
     text-decoration-thickness: 2px;
     text-decoration-line:line-through
 }
+.task:hover img{
+  opacity: 1 !important;
+}
 .nothing{
     position: absolute;
     top: 50%;
