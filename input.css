@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.task{
+    @apply py-6 px-16 border-b dark:border-gray-600
+}
+input[type="checkbox"] {
+  appearance:none ;
+}
+label {
+  position: relative;
+}
+input[type="checkbox"]:checked + label::after{
+    content: url("./images/icon-check.svg");
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: -25px;
+    line-height: 23px;
+    background-image: linear-gradient(
+        hsl(192, 100%, 67%),
+        hsl(280, 87%, 65%)
+      );
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+label::before
+{
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: -25px;
+  border: 1px solid #ddd;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.task.done{
+    color: hsl(234, 39%, 85%);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    text-decoration-line:line-through
+}
+.nothing{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.active{
+    @apply text-blue-600
+}
+.primary{
+   background-color: hsl(235, 24%, 19%);
+}

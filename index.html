@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Todo app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body class="font-[font-family:'Josefin Sans', sans-serif;] bg-white dark:bg-[#161722] ">
+    <div
+      id="image"
+      class="h-[35vh] w-screen  bg-[url('./images/bg-mobile-light.jpg')] dark:bg-[url('./images/bg-mobile-dark.jpg')] md:dark:bg-[url('./images/bg-desktop-dark.jpg')]  md:bg-[url('./images/bg-desktop-light.jpg')] bg-no-repeat bg-contain md:bg-cover"
+    ></div>
+    <div
+      class="container max-[768px]:max-w-[360px] flex justify-center items-center m-auto h-screen absolute top-0 right-0 left-0 w-screen"
+    >
+      <div id="main-box" class="w-[40rem] h-[40rem]">
+        <div id="head" class="flex items-center justify-between">
+          <h2 class="text-white text-4xl font-bold tracking-[1rem]">TODO</h2>
+          <img src="./images/icon-moon.svg" alt="" id="moon" class="dark:hidden cursor-pointer"/>
+          <img src="./images/icon-sun.svg" alt="" id="sun" class="hidden dark:block cursor-pointer">
+        </div>
+        <form class="w-full bg-white shadow-xl dark:bg-[#25273C] rounded-md py-5 px-16 mt-6">
+          <div id="" class="relative">
+            <input type="checkbox" name="" id="form" />
+            <label for="form"></label>
+            <input
+            type="text"
+            name=""
+            id="text-form"
+            placeholder="Create a new TODO..."
+            class="focus:outline-none relative dark:bg-[#25273C] dark:text-white"
+          />
+          </div>
+
+        </form>
+        <div
+          id="tasks"
+          class="h-3/4  mt-6 rounded-md bg-white dark:bg-[#25273C] dark:text-white shadow-2xl text-lg overflow-x-auto"
+        >
+
+        </div>
+        <div
+          id="actions"
+          class="w-full bg-white dark:dark:bg-[#25273C]  shadow-2xl border-t dark:border-gray-700 rounded-md text-sm text-gray-400 py-2 px-8 flex justify-around flex-wrap"
+        >
+          <div id="items" class="order-1 pb-5"></div>
+          <div id="status" class="order-3">
+            <ul class="flex " id="links">
+              <li class="ml-2 cursor-pointer active" id="all">All</li>
+              <li class="ml-2 cursor-pointer" id="active">Active</li>
+              <li class="ml-2 cursor-pointer" id="completed">Completed</li>
+            </ul>
+          </div>
+          <div id="clear" class="cursor-pointer order-2">Clear Completed</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Ahmed</a>.
+  </div> -->
+    <script src="main.js"></script>
+  </body>
+</html>
